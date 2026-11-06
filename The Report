@@ -13,6 +13,6 @@ SELECT CASE
 FROM Students AS s
     INNER JOIN Grades AS g ON s.Marks BETWEEN G.Min_Mark AND G.Max_Mark
 ORDER BY g.Grade DESC,
-         CASE WHEN g.Grade < 8 THEN NULL ELSE s.Name END,    
-         CASE WHEN g.Grade < 8 THEN s.Marks ELSE 0 END
+         CASE WHEN g.Grade < 8 THEN NULL ELSE s.Name END ASC,    
+         CASE WHEN g.Grade < 8 THEN s.Marks ELSE 0 END ASC
 ;
